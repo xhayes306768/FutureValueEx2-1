@@ -17,7 +17,15 @@ namespace FutureValue.Controllers
         [HttpPost]
         public IActionResult Index(FutureValueModel model)
         {
-            ViewBag.FV = model.CalculateFutureValue(); return View(model);
+            if (ModelState.IsValid)
+            {
+                ViewBag.FV = model.CalculateFutureValue();
+            }
+            else
+            {
+                ViewBag.FV = 0;
+            }
+            return View(model);
         }
     }
 }
