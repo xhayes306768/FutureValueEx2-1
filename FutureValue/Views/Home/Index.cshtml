@@ -7,7 +7,7 @@
 }
 <h1>Future Value Calculator</h1>
 <form asp-action="Index" method="post">
-    <div>
+    <div asp-validation-summary="All">
         <label asp-for="MonthlyInvestment">Monthly Investment:</label> <input asp-for="MonthlyInvestment" />
     </div>
     <div>
